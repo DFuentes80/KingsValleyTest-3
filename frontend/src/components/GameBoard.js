@@ -114,7 +114,7 @@ const GameBoard = ({ board, selectedSquare, onSquareClick, currentPlayer, gameSt
         </div>
         <div className="flex items-center space-x-2">  
           <div className="w-8 h-8 bg-blue-600 rounded-full border-2 border-blue-800 flex items-center justify-center">
-            <div className="w-4 h-4 bg-yellow-300 rounded-full border border-yellow-500 flex items-center justify-center text-blue-800 text-xs">♔</div>
+            <div className="w-5 h-5 bg-yellow-300 rounded-full border border-yellow-500 flex items-center justify-center text-blue-800 text-sm font-bold">♔</div>
           </div>
           <span>King</span>
         </div>
