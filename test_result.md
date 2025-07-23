@@ -273,6 +273,10 @@ agent_communication:
     message: "Frontend implementation completed successfully. All components implemented: GameLobby, GameBoard, GameContainer with full game functionality, real-time updates, and modern UI matching original design."
   - agent: "main"
     message: "Application is complete and ready for user testing. User chose to test frontend functionality manually rather than automated testing."
+  - agent: "main"
+    message: "Enhanced visual design based on user feedback: implemented larger board with colorful circular chips, special king pieces with crown symbols, improved spacing and visual appeal."
+  - agent: "user"
+    message: "User confirmed visual improvements are much better and expressed satisfaction with the enhanced design."
 
 user_problem_statement: "Test the King's Valley multiplayer game backend that I just implemented. Please test these key functionalities: 1. API Health Check, 2. Game Creation, 3. Game Joining, 4. Game State Retrieval, 5. Move Making, 6. Game Logic, 7. Win Condition"
 
