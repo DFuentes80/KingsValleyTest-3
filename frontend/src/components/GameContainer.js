@@ -173,53 +173,56 @@ const GameContainer = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 py-8">
-      <div className="max-w-2xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <div className="text-center mb-6">
-            <h1 className="text-3xl font-bold mb-2">King's Valley</h1>
-            <p className="text-gray-600">Room Code: <span className="font-mono font-bold">{gameState.room_code}</span></p>
-            <div className="flex justify-center space-x-4 mt-2">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold mb-4">King's Valley</h1>
+            <p className="text-gray-600 text-lg">Room Code: <span className="font-mono font-bold text-2xl bg-gray-100 px-3 py-1 rounded">{gameState.room_code}</span></p>
+            <div className="flex justify-center space-x-6 mt-4">
               {gameState.players.map((player, index) => (
-                <div key={player.id} className="text-sm">
+                <div key={player.id} className="text-base flex items-center space-x-2">
+                  <div className={`w-4 h-4 rounded-full ${player.player_number === 1 ? 'bg-blue-500' : 'bg-red-500'}`}></div>
                   <span className={`font-semibold ${player.player_number === 1 ? 'text-blue-600' : 'text-red-600'}`}>
-                    Player {player.player_number}: {player.name}
+                    {player.name}
                   </span>
-                  {player.id === playerInfo?.id && <span className="text-gray-500"> (You)</span>}
+                  {player.id === playerInfo?.id && <span className="text-gray-500 text-sm">(You)</span>}
                 </div>
               ))}
             </div>
           </div>
 
           {winner && (
-            <div className="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded text-center">
-              <h2 className="text-xl font-bold">Game Over!</h2>
-              <p>Player {winner} wins!</p>
+            <div className="mb-6 p-6 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center">
+              <h2 className="text-2xl font-bold mb-2">🎉 Game Over! 🎉</h2>
+              <p className="text-lg">Player {winner} wins!</p>
               {winner === playerInfo?.number ? (
-                <p className="font-semibold">Congratulations! You won!</p>
+                <p className="font-semibold text-xl mt-2">🏆 Congratulations! You won! 🏆</p>
               ) : (
-                <p>Better luck next time!</p>
+                <p className="text-lg mt-2">Better luck next time!</p>
               )}
             </div>
           )}
 
-          <GameBoard
-            board={gameState.game_state.board}
-            selectedSquare={selectedSquare}
-            onSquareClick={handleSquareClick}
-            currentPlayer={gameState.game_state.current_player}
-            gameStatus={gameState.status}
-          />
+          <div className="flex justify-center">
+            <GameBoard
+              board={gameState.game_state.board}
+              selectedSquare={selectedSquare}
+              onSquareClick={handleSquareClick}
+              currentPlayer={gameState.game_state.current_player}
+              gameStatus={gameState.status}
+            />
+          </div>
 
           {error && (
-            <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+            <div className="mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg text-center">
               {error}
             </div>
           )}
 
-          <div className="mt-6 text-center">
+          <div className="mt-8 text-center">
             <button
               onClick={handleNewGame}
-              className="bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600"
+              className="bg-gray-500 text-white py-3 px-6 rounded-lg hover:bg-gray-600 text-lg"
             >
               Back to Lobby
             </button>
