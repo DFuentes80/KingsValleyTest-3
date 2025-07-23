@@ -1,71 +1,48 @@
-# 🎮 King's Valley Game - Free Deployment Guide
+# 🎮 King's Valley Game
 
-Deploy your King's Valley multiplayer game for **FREE** using modern cloud platforms!
+A multiplayer board game built with React and FastAPI, ready for free deployment!
 
-## 🌟 Deployment Options
+## 🚀 Deploy to Vercel
 
-### Option 1: Vercel + MongoDB Atlas (Recommended)
-- **Frontend**: Free on Vercel
-- **Backend**: Free serverless functions on Vercel  
-- **Database**: Free MongoDB Atlas (512MB)
-- **Custom URL**: Free .vercel.app subdomain
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/kings-valley-game)
 
-### Option 2: Railway + MongoDB Atlas
-- **Full-stack**: Free tier on Railway
-- **Database**: Free MongoDB Atlas
-- **Custom URL**: Free .railway.app subdomain
+## 🎯 Quick Setup
 
-## 🚀 Quick Start with Vercel (5 minutes)
-
-### Step 1: Setup MongoDB Atlas (Free)
-1. Go to [MongoDB Atlas](https://www.mongodb.com/atlas)
-2. Create free account
-3. Create new cluster (free M0 tier)
-4. Create database user
-5. Get connection string (looks like: `mongodb+srv://username:password@cluster.mongodb.net/`)
-
-### Step 2: Deploy Frontend to Vercel
-1. Go to [Vercel](https://vercel.com)
-2. Connect your GitHub account
-3. Import your repository
-4. Set environment variables:
-   - `REACT_APP_BACKEND_URL` = `https://your-app.vercel.app`
-5. Deploy!
-
-### Step 3: Deploy Backend to Vercel
-1. In same Vercel project, add backend
-2. Set environment variables:
-   - `MONGO_URL` = your MongoDB Atlas connection string
+1. **Database**: Create free MongoDB Atlas cluster
+2. **Deploy**: Click the Vercel button above  
+3. **Environment**: Add these variables:
+   - `MONGO_URL` = your MongoDB connection string
    - `DB_NAME` = `kings_valley`
-3. Deploy backend as serverless functions
 
-## 📁 File Structure for Deployment
+## 🎮 How to Play
+
+1. Go to your deployed URL
+2. Enter your name
+3. Create or join a game with room code
+4. Play with friends and family!
+
+## ✨ Features
+
+- 🎮 **Multiplayer** - Play with friends using room codes
+- 📱 **Mobile Friendly** - Works on phones, tablets, computers  
+- 🎨 **Kid-Friendly Design** - Colorful pieces, large board
+- 👑 **Special King Pieces** - Crown symbols for kings
+- ⚡ **Real-time Updates** - See moves instantly
+
+## 🔧 Technical Stack
+
+- **Frontend**: React + Tailwind CSS
+- **Backend**: FastAPI (serverless functions)
+- **Database**: MongoDB Atlas
+- **Hosting**: Vercel (free tier)
+
+## 📁 Project Structure
+
 ```
-kings-valley-game/
-├── frontend/          # React app
-├── api/              # Backend serverless functions  
-├── vercel.json       # Vercel configuration
-└── package.json      # Root package.json
+├── frontend/          # React frontend
+├── api/              # FastAPI backend
+├── vercel.json       # Deployment config
+└── package.json      # Dependencies
 ```
 
-## 🔧 Environment Variables
-
-### Frontend (.env)
-```
-REACT_APP_BACKEND_URL=https://your-app.vercel.app
-```
-
-### Backend (.env)
-```
-MONGO_URL=mongodb+srv://username:password@cluster.mongodb.net/
-DB_NAME=kings_valley
-```
-
-## 🎯 Result
-- **Free hosting** for your multiplayer game
-- **Public URL** to share with kids and families
-- **Automatic scaling** - handles traffic spikes
-- **SSL included** - secure HTTPS connection
-
-## 📞 Support
-Having issues? The deployment should take about 5-10 minutes total!
+Perfect for kids, families, and anyone who loves board games!
