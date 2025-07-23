@@ -223,7 +223,20 @@ frontend:
         agent: "main"
         comment: "Implemented main game container with state management, API integration, move handling, and real-time updates"
 
-  - task: "Real-time Game Updates"
+  - task: "Visual Design Enhancement"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components/GameBoard.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Enhanced visual design: larger board (24x24 squares), colorful circular chips instead of letters, special king pieces with crown symbols, better spacing, visual legend"
+      - working: true
+        agent: "user"
+        comment: "User confirmed visual improvements look much better - satisfied with enhanced design"
     implemented: true
     working: true
     file: "/app/frontend/src/components/GameContainer.js"
