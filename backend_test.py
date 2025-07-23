@@ -10,7 +10,7 @@ import time
 from typing import Dict, Any, Optional
 
 # Backend URL from frontend/.env
-BACKEND_URL = "https://047e5b13-9185-4dd7-8536-a0f87f82e64e.preview.emergentagent.com/api"
+BACKEND_URL = "https://4a65886b-a433-4450-ba10-701d6bc2735c.preview.emergentagent.com/api"
 
 class KingsValleyTester:
     def __init__(self):

@@ -6,7 +6,7 @@ Debug King's Valley Move Validation
 import requests
 import json
 
-BACKEND_URL = "https://047e5b13-9185-4dd7-8536-a0f87f82e64e.preview.emergentagent.com/api"
+BACKEND_URL = "https://4a65886b-a433-4450-ba10-701d6bc2735c.preview.emergentagent.com/api"
 
 def debug_move_validation():
     session = requests.Session()
