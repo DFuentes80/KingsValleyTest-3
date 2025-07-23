@@ -1,0 +1,14 @@
+{
+  "name": "kings-valley-game",
+  "version": "1.0.0",
+  "description": "King's Valley multiplayer board game",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "cd frontend && yarn build",
+    "start": "vercel dev"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vercel": "^34.0.0"
+  }
+}
