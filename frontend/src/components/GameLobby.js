@@ -4,6 +4,7 @@ const GameLobby = ({ onCreateGame, onJoinGame, isLoading }) => {
   const [playerName, setPlayerName] = useState('');
   const [roomCode, setRoomCode] = useState('');
   const [activeTab, setActiveTab] = useState('create');
+  const [language, setLanguage] = useState('en');
 
   const handleCreateGame = (e) => {
     e.preventDefault();
@@ -16,6 +17,29 @@ const GameLobby = ({ onCreateGame, onJoinGame, isLoading }) => {
     e.preventDefault();
     if (playerName.trim() && roomCode.trim()) {
       onJoinGame(roomCode.trim().toUpperCase(), playerName.trim());
+    }
+  };
+
+  const rules = {
+    en: {
+      title: "How to Play:",
+      rules: [
+        "Get your King (♔) to the center square to win",
+        "Pieces slide until blocked by another piece or board edge",
+        "You must move to the last available square in your direction",
+        "Players alternate turns",
+        "Blue pieces are Player 1, Red pieces are Player 2"
+      ]
+    },
+    es: {
+      title: "Cómo Jugar:",
+      rules: [
+        "Lleva tu Rey (♔) al cuadro central para ganar",
+        "Las piezas se deslizan hasta ser bloqueadas por otra pieza o el borde",
+        "Debes mover al último cuadro disponible en tu dirección",
+        "Los jugadores alternan turnos",
+        "Las piezas azules son el Jugador 1, las rojas son el Jugador 2"
+      ]
     }
   };
 
@@ -111,12 +135,31 @@ const GameLobby = ({ onCreateGame, onJoinGame, isLoading }) => {
       )}
       
       <div className="mt-6 text-sm text-gray-600">
-        <h3 className="font-semibold mb-2">How to Play:</h3>
+        <div className="flex justify-between items-center mb-2">
+          <h3 className="font-semibold">{rules[language].title}</h3>
+          <div className="flex bg-gray-100 rounded-md">
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-2 py-1 text-xs rounded-l-md ${
+                language === 'en' ? 'bg-blue-500 text-white' : 'text-gray-600'
+              }`}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLanguage('es')}
+              className={`px-2 py-1 text-xs rounded-r-md ${
+                language === 'es' ? 'bg-blue-500 text-white' : 'text-gray-600'
+              }`}
+            >
+              ES
+            </button>
+          </div>
+        </div>
         <ul className="space-y-1 text-xs">
-          <li>• Get your King (K) to the center square to win</li>
-          <li>• Pieces slide until blocked by another piece or board edge</li>
-          <li>• Players alternate turns</li>
-          <li>• Blue pieces are Player 1, Red pieces are Player 2</li>
+          {rules[language].rules.map((rule, index) => (
+            <li key={index}>• {rule}</li>
+          ))}
         </ul>
       </div>
     </div>
