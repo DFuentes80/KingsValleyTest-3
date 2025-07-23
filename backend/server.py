@@ -303,9 +303,10 @@ async def get_game_by_room(room_code: str):
         raise HTTPException(status_code=404, detail="Game room not found")
     
     return Game(**game_doc)
+# Legacy endpoints (keeping for compatibility)
 @api_router.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "King's Valley API - Ready to play!"}
 
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
