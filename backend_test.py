@@ -228,15 +228,15 @@ class KingsValleyTester:
                         
                         # Check if piece moved correctly
                         if (board[4][0] is None and  # Original position empty
-                            board[3][0] and board[3][0]["player"] == 1 and board[3][0]["type"] == "P" and  # New position has player 1 pawn
+                            board[1][0] and board[1][0]["player"] == 1 and board[1][0]["type"] == "P" and  # New position has player 1 pawn
                             game["game_state"]["current_player"] == 2):  # Turn switched to player 2
                             
                             self.log_test("Valid Move Making", True, "Valid move executed successfully and turn switched",
-                                        {"move": "Player 1 pawn (4,0) -> (3,0)", "current_player": game["game_state"]["current_player"],
+                                        {"move": "Player 1 pawn (4,0) -> (1,0)", "current_player": game["game_state"]["current_player"],
                                          "moves_count": len(game["game_state"]["moves"])})
                         else:
                             self.log_test("Valid Move Making", False, "Move reported as successful but board state incorrect",
-                                        {"board_4_0": board[4][0], "board_3_0": board[3][0], 
+                                        {"board_4_0": board[4][0], "board_1_0": board[1][0], 
                                          "current_player": game["game_state"]["current_player"]})
                     else:
                         self.log_test("Valid Move Making", False, "Move successful but couldn't retrieve updated game state")
