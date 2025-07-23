@@ -12,8 +12,8 @@ const GameBoard = ({ board, selectedSquare, onSquareClick, currentPlayer, gameSt
       if (isKing) {
         return (
           <div className={`${baseClasses} bg-blue-600 border-blue-800 relative`}>
-            <div className="w-8 h-8 bg-yellow-300 rounded-full border-2 border-yellow-500">
-              <div className="w-full h-full flex items-center justify-center text-blue-800 font-bold text-xs">♔</div>
+            <div className="w-10 h-10 bg-yellow-300 rounded-full border-2 border-yellow-500 flex items-center justify-center">
+              <div className="text-blue-800 font-bold text-lg">♔</div>
             </div>
           </div>
         );
@@ -29,8 +29,8 @@ const GameBoard = ({ board, selectedSquare, onSquareClick, currentPlayer, gameSt
       if (isKing) {
         return (
           <div className={`${baseClasses} bg-red-600 border-red-800 relative`}>
-            <div className="w-8 h-8 bg-yellow-300 rounded-full border-2 border-yellow-500">
-              <div className="w-full h-full flex items-center justify-center text-red-800 font-bold text-xs">♔</div>
+            <div className="w-10 h-10 bg-yellow-300 rounded-full border-2 border-yellow-500 flex items-center justify-center">
+              <div className="text-red-800 font-bold text-lg">♔</div>
             </div>
           </div>
         );
