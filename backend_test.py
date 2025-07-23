@@ -202,13 +202,14 @@ class KingsValleyTester:
             return
             
         try:
-            # Player 1's turn - move pawn from (4,0) to (3,0)
+            # Player 1's turn - move pawn from (4,0) to (1,0) (slides until blocked)
+            # In King's Valley, pieces slide until blocked, so (4,0) to (1,0) is valid
             payload = {
                 "game_id": self.game_data["game_id"],
                 "player_id": self.game_data["player1_id"],
                 "from_row": 4,
                 "from_col": 0,
-                "to_row": 3,
+                "to_row": 1,
                 "to_col": 0
             }
             
